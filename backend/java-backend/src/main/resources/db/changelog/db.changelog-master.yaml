@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changes/001-create-role-table.sql
+      author: Andriy Pleskanko
+      comment: Create name table
+  - include:
+      file: classpath:/db/changelog/changes/002-create-user-table.sql
+      author: Andriy Pleskanko
+      comment: Create user table
+  - include:
+      file: classpath:/db/changelog/changes/003-insert-roles.sql
+      author: Andriy Pleskanko
+      comment: Insert roles
+  - include:
+      file: classpath:/db/changelog/changes/004-insert-users.sql
+      author: Andriy Pleskanko
+      comment: Insert users

@@ -1,0 +1,71 @@
+{
+  "name": "nodejs-sample",
+  "version": "1.0.0",
+  "description": "This is an example node js project using typescript, consul, express, mongoose, mocha",
+  "author": "Artem Petrenko",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "devel": "set NODE_ENV=dev && nodemon --exec ts-node -r tsconfig-paths/register ./src/index.ts",
+    "test": "mocha --timeout 30000 --exit -r ts-node/register -r tsconfig-paths/register src/test/**/*.test.ts",
+    "coverage": "nyc npm run test",
+    "start": "npm run build && node ./dist/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80
+  },
+  "_moduleAliases": {
+    "src": "dist"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express-validator": "^3.0.0",
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "chai-http": "4.3.0",
+    "consul": "1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-status": "^1.7.4",
+    "log4js": "^6.9.1",
+    "module-alias": "2.2.3",
+    "mongoose-long": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/chai": "4.3.5",
+    "@types/consul": "0.40.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/http-status": "^1.1.2",
+    "@types/jest": "^29.5.12",
+    "@types/log4js": "^2.3.5",
+    "@types/mocha": "10.0.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^16.18.97",
+    "@types/sinon": "10.0.14",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "axios-mock-adapter": "^1.22.0",
+    "chai": "^4.3.7",
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "jest": "^29.7.0",
+    "jest-mock-axios": "^4.7.3",
+    "mocha": "10.2.0",
+    "mongodb-memory-server": "^8.16.0",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.1",
+    "nyc": "15.1.0",
+    "sinon": "^15.0.4",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.5"
+  }
+}
